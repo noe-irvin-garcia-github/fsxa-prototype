@@ -60,7 +60,8 @@ const config: NuxtConfig = {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@layer0/nuxt/module', { layer0SourceMaps: true }]
   ],
   /*
    ** Nuxt.js modules
@@ -101,8 +102,7 @@ const config: NuxtConfig = {
     extend(config) {
       config!.resolve!.alias!.vue = path.resolve('./node_modules/vue')
     }
-  },
-  buildDir: 'dist'
+  }
 }
 
 export default config
